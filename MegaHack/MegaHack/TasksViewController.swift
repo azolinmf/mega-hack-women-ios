@@ -130,7 +130,7 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         cell.isHidden = true
         cell.layer.cornerRadius = 8.0
-        cell.clipsToBounds = true
+        cell.containerView.layer.cornerRadius = 8.0
         
         let task = tasks[indexPath.row]
         
@@ -139,11 +139,6 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         if selectedDay == task.date {
             cell.isHidden = false
-        }
-        
-        
-        if indexPath.row == 1 {
-            cell.backgroundColor = .red
         }
         
         return cell
