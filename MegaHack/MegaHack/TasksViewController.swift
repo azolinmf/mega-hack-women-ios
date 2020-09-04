@@ -8,11 +8,17 @@
 
 import UIKit
 
+enum taskType: String {
+    case domestic = "TAREFA DOMÉSTICA"
+    case shopping = "COMPRAS"
+}
+
 extension UIColor {
   struct MyTheme {
     static var orange: UIColor  { return UIColor(red: 243/255, green: 174/255, blue: 89/255, alpha: 1) }
     static var darkGray: UIColor { return UIColor(red: 210/255, green: 206/255, blue: 204/255, alpha: 1) }
     static var lightGray: UIColor { return UIColor(red: 254/255, green: 250/255, blue: 246/255, alpha: 1) }
+    static var green: UIColor { return UIColor(red: 60/255, green: 181/255, blue: 165/255, alpha: 1) }
   }
 }
 
@@ -41,14 +47,14 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
         tasksTableView.dataSource = self
         
         let today = calendar.component(.day, from: date)
-        let newTask = Task(title: "Varrer a cozinha", type: "Tarefa Doméstica", date: today)
+        let newTask = Task(title: "Varrer a cozinha", type: .domestic, date: today)
         tasks.append(newTask)
-        let newTask2 = Task(title: "Varrer a cozinhaaaa", type: "Tarefaaaa Doméstica", date: today)
+        let newTask2 = Task(title: "Varrer a cozinhaaaa", type: .domestic, date: today)
         tasks.append(newTask2)
         let tomorrow = calendar.component(.day, from: date) + 1
-        let newTask3 = Task(title: "VARRER tudo", type: "Tarefaaaa Doméstica", date: tomorrow)
+        let newTask3 = Task(title: "VARRER tudo", type: .shopping, date: tomorrow)
         tasks.append(newTask3)
-        let newTask4 = Task(title: "Tem que varrer né", type: "ROOOOI", date: today)
+        let newTask4 = Task(title: "Tem que varrer né", type: .domestic, date: today)
         tasks.append(newTask4)
         
         selectedDay = today
@@ -135,7 +141,7 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
         let task = tasks[indexPath.row]
         
         cell.titleLabel.text = task.title
-        cell.typeLabel.text = task.type
+        cell.typeLabel.text = task.type.rawValue
         
         if selectedDay == task.date {
             cell.isHidden = false
@@ -151,9 +157,12 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
         return 0
     }
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tasksTableView.cellForRow(at: indexPath) as! TaskTableViewCell
+        
+        cell.doneImage.image = UIImage(systemName: "checkmark.circle.fill")
+        cell.doneImage.tintColor = UIColor.MyTheme.green
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count

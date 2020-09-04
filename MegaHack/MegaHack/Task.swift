@@ -9,13 +9,13 @@
 import Foundation
 
 class Task {
-    internal init(title: String, type: String, date: Int) {
+    internal init(title: String, type: taskType, date: Int) {
         self.title = title
         self.type = type
         self.date = date
     }
     
     var title: String
-    var type: String
+    var type: taskType
     var date: Int
 }
