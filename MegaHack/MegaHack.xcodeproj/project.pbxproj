@@ -18,6 +18,8 @@
 		9DC062122501CAA500FA8600 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062112501CAA500FA8600 /* TasksViewController.swift */; };
 		9DC062142501CAC200FA8600 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062132501CAC200FA8600 /* SummaryViewController.swift */; };
 		9DC062182501D07600FA8600 /* DaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062172501D07600FA8600 /* DaysCell.swift */; };
+		9DC0621B2502768700FA8600 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0621A2502768700FA8600 /* Task.swift */; };
+		9DC0621D250277E800FA8600 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0621C250277E800FA8600 /* TaskTableViewCell.swift */; };
 		EA96B565F95F797625721AD8 /* Pods_MegaHack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917EA891DE21A1869180A4CD /* Pods_MegaHack.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,9 @@
 		9DC062112501CAA500FA8600 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		9DC062132501CAC200FA8600 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		9DC062172501D07600FA8600 /* DaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCell.swift; sourceTree = "<group>"; };
+		9DC0621925025FDC00FA8600 /* MegaHack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MegaHack.entitlements; sourceTree = "<group>"; };
+		9DC0621A2502768700FA8600 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		9DC0621C250277E800FA8600 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 		9D20017624FDD25200B8FC50 /* MegaHack */ = {
 			isa = PBXGroup;
 			children = (
+				9DC0621925025FDC00FA8600 /* MegaHack.entitlements */,
 				9DC0620B2501AAEA00FA8600 /* Resources */,
 				9D20017724FDD25200B8FC50 /* AppDelegate.swift */,
 				9D20017924FDD25200B8FC50 /* SceneDelegate.swift */,
@@ -93,6 +99,8 @@
 				9DC062112501CAA500FA8600 /* TasksViewController.swift */,
 				9DC062132501CAC200FA8600 /* SummaryViewController.swift */,
 				9DC062172501D07600FA8600 /* DaysCell.swift */,
+				9DC0621A2502768700FA8600 /* Task.swift */,
+				9DC0621C250277E800FA8600 /* TaskTableViewCell.swift */,
 			);
 			path = MegaHack;
 			sourceTree = "<group>";
@@ -134,6 +142,7 @@
 				9D20017124FDD25200B8FC50 /* Frameworks */,
 				9D20017224FDD25200B8FC50 /* Resources */,
 				4973F83E87DCBC5ED2B0BF31 /* [CP] Embed Pods Frameworks */,
+				9045FC4B4771657E162CCB97 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,6 +241,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MegaHack/Pods-MegaHack-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9045FC4B4771657E162CCB97 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MegaHack/Pods-MegaHack-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MegaHack/Pods-MegaHack-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MegaHack/Pods-MegaHack-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -239,11 +265,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DC0621D250277E800FA8600 /* TaskTableViewCell.swift in Sources */,
 				9DC062182501D07600FA8600 /* DaysCell.swift in Sources */,
 				9DC062102501B1B900FA8600 /* LoginViewController.swift in Sources */,
 				9DC062122501CAA500FA8600 /* TasksViewController.swift in Sources */,
 				9D20017824FDD25200B8FC50 /* AppDelegate.swift in Sources */,
 				9D20017A24FDD25200B8FC50 /* SceneDelegate.swift in Sources */,
+				9DC0621B2502768700FA8600 /* Task.swift in Sources */,
 				9DC062142501CAC200FA8600 /* SummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +417,7 @@
 			baseConfigurationReference = 70391941EBB5999F39C7EC8A /* Pods-MegaHack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MegaHack/MegaHack.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 725HB8W2V6;
 				INFOPLIST_FILE = MegaHack/Info.plist;
@@ -408,6 +437,7 @@
 			baseConfigurationReference = 2395ABB41F77F5E6F512439D /* Pods-MegaHack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MegaHack/MegaHack.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 725HB8W2V6;
 				INFOPLIST_FILE = MegaHack/Info.plist;

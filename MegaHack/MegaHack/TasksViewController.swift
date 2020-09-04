@@ -16,15 +16,18 @@ extension UIColor {
   }
 }
 
-class TasksViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class TasksViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var newTaskButton: UIButton!
     @IBOutlet weak var daysCollectionView: UICollectionView!
+    @IBOutlet weak var tasksTableView: UITableView!
     
     let date = Date()
     let calendar = Calendar.current
     var selectedIndex = 0
+    var selectedDay = 0
+    var tasks: [Task] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,21 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         daysCollectionView.delegate = self
         daysCollectionView.dataSource = self
+        tasksTableView.delegate = self
+        tasksTableView.dataSource = self
+        
+        let today = calendar.component(.day, from: date)
+        let newTask = Task(title: "Varrer a cozinha", type: "Tarefa Doméstica", date: today)
+        tasks.append(newTask)
+        let newTask2 = Task(title: "Varrer a cozinhaaaa", type: "Tarefaaaa Doméstica", date: today)
+        tasks.append(newTask2)
+        let tomorrow = calendar.component(.day, from: date) + 1
+        let newTask3 = Task(title: "VARRER tudo", type: "Tarefaaaa Doméstica", date: tomorrow)
+        tasks.append(newTask3)
+        let newTask4 = Task(title: "Tem que varrer né", type: "ROOOOI", date: today)
+        tasks.append(newTask4)
+        
+        selectedDay = today
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -98,8 +116,58 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! DaysCell
 
+        if let text = cell.number.text, let value = Int(text) {
+            selectedDay = value
+        }
+        
         selectedIndex = indexPath.item
         daysCollectionView.reloadData()
+        tasksTableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskTableViewCell
+        
+        cell.isHidden = true
+        cell.layer.cornerRadius = 8.0
+        cell.clipsToBounds = true
+        
+        let task = tasks[indexPath.row]
+        
+        cell.titleLabel.text = task.title
+        cell.typeLabel.text = task.type
+        
+        if selectedDay == task.date {
+            cell.isHidden = false
+        }
+        
+        
+        if indexPath.row == 1 {
+            cell.backgroundColor = .red
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if tasks[indexPath.row].date == selectedDay {
+            return 75
+        }
+        return 0
+    }
+    
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tasks.count
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
     }
     
 }

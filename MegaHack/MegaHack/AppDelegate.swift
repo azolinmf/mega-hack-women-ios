@@ -8,18 +8,31 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        UITabBar.appearance().tintColor = UIColor.MyTheme.orange
+        
         FirebaseApp.configure()
         
+        GIDSignIn.sharedInstance().clientID = "1042550771993-4m62k24fim50lmr6envmffkj40pgb3no.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
+        
         return true
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if (error == nil) {
+          // Perform any operations on signed in user here.
+          // ...
+        } else {
+          print("\(error.localizedDescription)")
+        }
     }
 
     // MARK: UISceneSession Lifecycle
