@@ -13,11 +13,6 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var doneImage: UIImageView!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 25, right: 0))
-    
-    }
 }

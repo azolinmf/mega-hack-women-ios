@@ -13,6 +13,7 @@ extension UIColor {
     static var orange: UIColor  { return UIColor(red: 243/255, green: 174/255, blue: 89/255, alpha: 1) }
     static var darkGray: UIColor { return UIColor(red: 210/255, green: 206/255, blue: 204/255, alpha: 1) }
     static var lightGray: UIColor { return UIColor(red: 254/255, green: 250/255, blue: 246/255, alpha: 1) }
+    static var green: UIColor { return UIColor(red: 60/255, green: 181/255, blue: 165/255, alpha: 1) }
   }
 }
 
@@ -22,12 +23,13 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var newTaskButton: UIButton!
     @IBOutlet weak var daysCollectionView: UICollectionView!
     @IBOutlet weak var tasksTableView: UITableView!
+    @IBOutlet weak var todayLabel: UILabel!
     
     let date = Date()
     let calendar = Calendar.current
     var selectedIndex = 0
     var selectedDay = 0
-    var tasks: [Task] = []
+    var tasks = TaskList.shared.tasks
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,17 +43,20 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
         tasksTableView.dataSource = self
         
         let today = calendar.component(.day, from: date)
-        let newTask = Task(title: "Varrer a cozinha", type: "Tarefa Doméstica", date: today)
-        tasks.append(newTask)
-        let newTask2 = Task(title: "Varrer a cozinhaaaa", type: "Tarefaaaa Doméstica", date: today)
-        tasks.append(newTask2)
-        let tomorrow = calendar.component(.day, from: date) + 1
-        let newTask3 = Task(title: "VARRER tudo", type: "Tarefaaaa Doméstica", date: tomorrow)
-        tasks.append(newTask3)
-        let newTask4 = Task(title: "Tem que varrer né", type: "ROOOOI", date: today)
-        tasks.append(newTask4)
-        
+        let thisMonth = calendar.component(.month, from: date)
         selectedDay = today
+        
+        todayLabel.text = intToMonth(month: thisMonth) + ", " + String(today)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+        
+        tasks = TaskList.shared.tasks
+        if tasksTableView != nil {
+            tasksTableView.reloadData()
+            self.view.layoutIfNeeded()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -76,6 +81,37 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
             return "Sexta"
         default:
             return "Segunda"
+        }
+    }
+    
+    func intToMonth(month: Int) -> String {
+        switch month {
+        case 1:
+            return "Jan"
+        case 2:
+            return "Fev"
+        case 3:
+            return "Mar"
+        case 4:
+            return "Abr"
+        case 5:
+            return "Maio"
+        case 6:
+            return "Jun"
+        case 7:
+            return "Jul"
+        case 8:
+            return "Ago"
+        case 9:
+            return "Set"
+        case 10:
+            return "Out"
+        case 11:
+            return "Nov"
+        case 12:
+            return "Dez"
+        default:
+            return "Set"
         }
     }
     
@@ -130,20 +166,15 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         cell.isHidden = true
         cell.layer.cornerRadius = 8.0
-        cell.clipsToBounds = true
+        cell.containerView.layer.cornerRadius = 8.0
         
         let task = tasks[indexPath.row]
         
         cell.titleLabel.text = task.title
-        cell.typeLabel.text = task.type
+        cell.typeLabel.text = task.type.rawValue
         
         if selectedDay == task.date {
             cell.isHidden = false
-        }
-        
-        
-        if indexPath.row == 1 {
-            cell.backgroundColor = .red
         }
         
         return cell
@@ -156,9 +187,12 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
         return 0
     }
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tasksTableView.cellForRow(at: indexPath) as! TaskTableViewCell
+        
+        cell.doneImage.image = UIImage(systemName: "checkmark.circle.fill")
+        cell.doneImage.tintColor = UIColor.MyTheme.green
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count

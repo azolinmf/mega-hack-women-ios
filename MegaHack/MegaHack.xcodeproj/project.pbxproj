@@ -13,6 +13,7 @@
 		9D20018124FDD25400B8FC50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D20018024FDD25400B8FC50 /* Assets.xcassets */; };
 		9D20018424FDD25400B8FC50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D20018224FDD25400B8FC50 /* LaunchScreen.storyboard */; };
 		9D20018C24FDD6B000B8FC50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D20018B24FDD6B000B8FC50 /* GoogleService-Info.plist */; };
+		9D68714F250421C80032D1BE /* TipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D68714E250421C80032D1BE /* TipCell.swift */; };
 		9DC0620E2501AB0C00FA8600 /* NewYorkSmallHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DC0620D2501AB0C00FA8600 /* NewYorkSmallHeavy.otf */; };
 		9DC062102501B1B900FA8600 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0620F2501B1B900FA8600 /* LoginViewController.swift */; };
 		9DC062122501CAA500FA8600 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062112501CAA500FA8600 /* TasksViewController.swift */; };
@@ -20,6 +21,12 @@
 		9DC062182501D07600FA8600 /* DaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062172501D07600FA8600 /* DaysCell.swift */; };
 		9DC0621B2502768700FA8600 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0621A2502768700FA8600 /* Task.swift */; };
 		9DC0621D250277E800FA8600 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0621C250277E800FA8600 /* TaskTableViewCell.swift */; };
+		9DC0621F2502E5AF00FA8600 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0621E2502E5AF00FA8600 /* NewTaskViewController.swift */; };
+		9DC062212502FCD600FA8600 /* DataPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062202502FCD600FA8600 /* DataPickerViewController.swift */; };
+		9DC0622325030B7600FA8600 /* TaskPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0622225030B7600FA8600 /* TaskPickerViewController.swift */; };
+		9DC062252503221700FA8600 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062242503221700FA8600 /* TaskList.swift */; };
+		9DC062272503242000FA8600 /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062262503242000FA8600 /* TaskType.swift */; };
+		9DC062292504133300FA8600 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062282504133300FA8600 /* TipsViewController.swift */; };
 		EA96B565F95F797625721AD8 /* Pods_MegaHack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917EA891DE21A1869180A4CD /* Pods_MegaHack.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +42,7 @@
 		9D20018324FDD25400B8FC50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D20018524FDD25400B8FC50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D20018B24FDD6B000B8FC50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9D68714E250421C80032D1BE /* TipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCell.swift; sourceTree = "<group>"; };
 		9DC0620D2501AB0C00FA8600 /* NewYorkSmallHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewYorkSmallHeavy.otf; sourceTree = "<group>"; };
 		9DC0620F2501B1B900FA8600 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9DC062112501CAA500FA8600 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +51,12 @@
 		9DC0621925025FDC00FA8600 /* MegaHack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MegaHack.entitlements; sourceTree = "<group>"; };
 		9DC0621A2502768700FA8600 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		9DC0621C250277E800FA8600 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		9DC0621E2502E5AF00FA8600 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		9DC062202502FCD600FA8600 /* DataPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPickerViewController.swift; sourceTree = "<group>"; };
+		9DC0622225030B7600FA8600 /* TaskPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPickerViewController.swift; sourceTree = "<group>"; };
+		9DC062242503221700FA8600 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
+		9DC062262503242000FA8600 /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
+		9DC062282504133300FA8600 /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +115,13 @@
 				9DC062172501D07600FA8600 /* DaysCell.swift */,
 				9DC0621A2502768700FA8600 /* Task.swift */,
 				9DC0621C250277E800FA8600 /* TaskTableViewCell.swift */,
+				9DC0621E2502E5AF00FA8600 /* NewTaskViewController.swift */,
+				9DC062202502FCD600FA8600 /* DataPickerViewController.swift */,
+				9DC0622225030B7600FA8600 /* TaskPickerViewController.swift */,
+				9DC062242503221700FA8600 /* TaskList.swift */,
+				9DC062262503242000FA8600 /* TaskType.swift */,
+				9DC062282504133300FA8600 /* TipsViewController.swift */,
+				9D68714E250421C80032D1BE /* TipCell.swift */,
 			);
 			path = MegaHack;
 			sourceTree = "<group>";
@@ -265,10 +286,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DC062252503221700FA8600 /* TaskList.swift in Sources */,
+				9DC0622325030B7600FA8600 /* TaskPickerViewController.swift in Sources */,
+				9DC062292504133300FA8600 /* TipsViewController.swift in Sources */,
+				9DC062212502FCD600FA8600 /* DataPickerViewController.swift in Sources */,
 				9DC0621D250277E800FA8600 /* TaskTableViewCell.swift in Sources */,
 				9DC062182501D07600FA8600 /* DaysCell.swift in Sources */,
+				9D68714F250421C80032D1BE /* TipCell.swift in Sources */,
+				9DC062272503242000FA8600 /* TaskType.swift in Sources */,
 				9DC062102501B1B900FA8600 /* LoginViewController.swift in Sources */,
 				9DC062122501CAA500FA8600 /* TasksViewController.swift in Sources */,
+				9DC0621F2502E5AF00FA8600 /* NewTaskViewController.swift in Sources */,
 				9D20017824FDD25200B8FC50 /* AppDelegate.swift in Sources */,
 				9D20017A24FDD25200B8FC50 /* SceneDelegate.swift in Sources */,
 				9DC0621B2502768700FA8600 /* Task.swift in Sources */,
@@ -428,7 +456,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.academy.megahack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -448,7 +476,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.academy.megahack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
