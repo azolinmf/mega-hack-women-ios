@@ -14,6 +14,7 @@
 		9D20018424FDD25400B8FC50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D20018224FDD25400B8FC50 /* LaunchScreen.storyboard */; };
 		9D20018C24FDD6B000B8FC50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D20018B24FDD6B000B8FC50 /* GoogleService-Info.plist */; };
 		9D68714F250421C80032D1BE /* TipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D68714E250421C80032D1BE /* TipCell.swift */; };
+		9D68715125044A600032D1BE /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D68715025044A600032D1BE /* SupportViewController.swift */; };
 		9DC0620E2501AB0C00FA8600 /* NewYorkSmallHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DC0620D2501AB0C00FA8600 /* NewYorkSmallHeavy.otf */; };
 		9DC062102501B1B900FA8600 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0620F2501B1B900FA8600 /* LoginViewController.swift */; };
 		9DC062122501CAA500FA8600 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062112501CAA500FA8600 /* TasksViewController.swift */; };
@@ -43,6 +44,7 @@
 		9D20018524FDD25400B8FC50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D20018B24FDD6B000B8FC50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9D68714E250421C80032D1BE /* TipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCell.swift; sourceTree = "<group>"; };
+		9D68715025044A600032D1BE /* SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 		9DC0620D2501AB0C00FA8600 /* NewYorkSmallHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewYorkSmallHeavy.otf; sourceTree = "<group>"; };
 		9DC0620F2501B1B900FA8600 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9DC062112501CAA500FA8600 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				9DC062262503242000FA8600 /* TaskType.swift */,
 				9DC062282504133300FA8600 /* TipsViewController.swift */,
 				9D68714E250421C80032D1BE /* TipCell.swift */,
+				9D68715025044A600032D1BE /* SupportViewController.swift */,
 			);
 			path = MegaHack;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			files = (
 				9DC062252503221700FA8600 /* TaskList.swift in Sources */,
 				9DC0622325030B7600FA8600 /* TaskPickerViewController.swift in Sources */,
+				9D68715125044A600032D1BE /* SupportViewController.swift in Sources */,
 				9DC062292504133300FA8600 /* TipsViewController.swift in Sources */,
 				9DC062212502FCD600FA8600 /* DataPickerViewController.swift in Sources */,
 				9DC0621D250277E800FA8600 /* TaskTableViewCell.swift in Sources */,
