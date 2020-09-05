@@ -32,6 +32,7 @@ class TipCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         label.text = "Titulo"
+        label.numberOfLines = 0
         label.textColor = UIColor(displayP3Red: 47/255, green: 47/255, blue: 47/255, alpha: 1)
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -82,7 +83,7 @@ class TipCell: UITableViewCell {
         
         title.topAnchor.constraint(equalTo: container.topAnchor).isActive = true
         title.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16).isActive = true
-        title.trailingAnchor.constraint(greaterThanOrEqualTo: container.trailingAnchor).isActive = true
+        title.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
         title.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         descriptionText.topAnchor.constraint(equalTo: title.bottomAnchor).isActive = true
