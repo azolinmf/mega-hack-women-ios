@@ -22,6 +22,7 @@
 		9DC0621D250277E800FA8600 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0621C250277E800FA8600 /* TaskTableViewCell.swift */; };
 		9DC0621F2502E5AF00FA8600 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0621E2502E5AF00FA8600 /* NewTaskViewController.swift */; };
 		9DC062212502FCD600FA8600 /* DataPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062202502FCD600FA8600 /* DataPickerViewController.swift */; };
+		9DC0622325030B7600FA8600 /* TaskPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0622225030B7600FA8600 /* TaskPickerViewController.swift */; };
 		EA96B565F95F797625721AD8 /* Pods_MegaHack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917EA891DE21A1869180A4CD /* Pods_MegaHack.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		9DC0621C250277E800FA8600 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		9DC0621E2502E5AF00FA8600 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		9DC062202502FCD600FA8600 /* DataPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPickerViewController.swift; sourceTree = "<group>"; };
+		9DC0622225030B7600FA8600 /* TaskPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				9DC0621C250277E800FA8600 /* TaskTableViewCell.swift */,
 				9DC0621E2502E5AF00FA8600 /* NewTaskViewController.swift */,
 				9DC062202502FCD600FA8600 /* DataPickerViewController.swift */,
+				9DC0622225030B7600FA8600 /* TaskPickerViewController.swift */,
 			);
 			path = MegaHack;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DC0622325030B7600FA8600 /* TaskPickerViewController.swift in Sources */,
 				9DC062212502FCD600FA8600 /* DataPickerViewController.swift in Sources */,
 				9DC0621D250277E800FA8600 /* TaskTableViewCell.swift in Sources */,
 				9DC062182501D07600FA8600 /* DaysCell.swift in Sources */,

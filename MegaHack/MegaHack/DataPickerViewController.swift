@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DataPickerDelegate: class {
-    func dateWasChosen(_ flavor: Date)
+    func dateWasChosen(_ date: Date)
 }
 
 class DataPickerViewController: UIViewController {

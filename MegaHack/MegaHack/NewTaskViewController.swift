@@ -8,8 +8,8 @@
 
 import UIKit
 
-class NewTaskViewController: UIViewController, UIPopoverPresentationControllerDelegate, DataPickerDelegate {
-
+class NewTaskViewController: UIViewController, UIPopoverPresentationControllerDelegate, DataPickerDelegate, TaskPickerDelegate {
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var dataButton: UIButton!
     @IBOutlet weak var taskTypeButton: UIButton!
@@ -37,16 +37,23 @@ class NewTaskViewController: UIViewController, UIPopoverPresentationControllerDe
     }
 
     @IBAction func didPressTaskType(_ sender: Any) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "taskPicker") as? TaskPickerViewController {
+            vc.delegate = self
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func didPressDateButton(_ sender: Any) {
         
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "data") as? DataPickerViewController {
-          
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "data") as? DataPickerViewController {
             vc.delegate = self
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(vc, animated: true, completion: nil)
         }
 
+    }
+    
+    func typeWasChosen(_ type: taskType) {
+        taskTypeButton.setTitle(type.rawValue, for: .normal)
     }
     
     func dateWasChosen(_ date: Date) {
@@ -70,4 +77,5 @@ class NewTaskViewController: UIViewController, UIPopoverPresentationControllerDe
         
         return formated
     }
+
 }

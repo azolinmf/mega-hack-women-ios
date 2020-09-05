@@ -551,7 +551,83 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fB4-ns-uHs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4037.68115942029" y="668.97321428571422"/>
+            <point key="canvasLocation" x="4075" y="398"/>
+        </scene>
+        <!--Task Picker View Controller-->
+        <scene sceneID="axX-Ro-g4n">
+            <objects>
+                <viewController storyboardIdentifier="taskPicker" id="xb7-IN-bk2" customClass="TaskPickerViewController" customModule="MegaHack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wIq-5R-i9b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDm-Dq-K1l">
+                                <rect key="frame" x="52" y="274" width="310.5" height="358"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo de tarefa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IM-Tg-xMc">
+                                        <rect key="frame" x="33" y="20" width="165" height="27"/>
+                                        <fontDescription key="fontDescription" name="NewYorkSmall-Heavy" family="New York Small" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAk-Ni-JZx">
+                                        <rect key="frame" x="0.0" y="62" width="311" height="251"/>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqp-CW-MZB">
+                                        <rect key="frame" x="140" y="324" width="30" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <state key="normal" title="OK">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressOk:" destination="ra1-sv-6Fl" eventType="touchUpInside" id="INs-g3-hvP"/>
+                                            <action selector="didPressOkButton:" destination="xb7-IN-bk2" eventType="touchUpInside" id="jjL-4e-sUu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feK-8f-tDM">
+                                        <rect key="frame" x="265.5" y="18.5" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="QLu-A0-krQ"/>
+                                            <constraint firstAttribute="height" constant="30" id="uu2-tt-IGz"/>
+                                        </constraints>
+                                        <state key="normal" image="close"/>
+                                        <connections>
+                                            <action selector="didPressCloseButton:" destination="xb7-IN-bk2" eventType="touchUpInside" id="XSC-jM-PlL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.68235294120000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zAk-Ni-JZx" secondAttribute="trailing" id="3ZN-ls-E4t"/>
+                                    <constraint firstAttribute="trailing" secondItem="feK-8f-tDM" secondAttribute="trailing" constant="15" id="64y-NF-9yk"/>
+                                    <constraint firstItem="feK-8f-tDM" firstAttribute="centerY" secondItem="6IM-Tg-xMc" secondAttribute="centerY" id="BAO-vu-ffU"/>
+                                    <constraint firstItem="zAk-Ni-JZx" firstAttribute="leading" secondItem="CDm-Dq-K1l" secondAttribute="leading" id="IFg-oa-gz1"/>
+                                    <constraint firstItem="zAk-Ni-JZx" firstAttribute="height" secondItem="CDm-Dq-K1l" secondAttribute="height" multiplier="0.7" id="IhY-j4-1oA"/>
+                                    <constraint firstItem="Xqp-CW-MZB" firstAttribute="centerX" secondItem="CDm-Dq-K1l" secondAttribute="centerX" id="VsX-lG-FTb"/>
+                                    <constraint firstItem="6IM-Tg-xMc" firstAttribute="top" secondItem="CDm-Dq-K1l" secondAttribute="top" constant="20" id="WQp-ZG-VdO"/>
+                                    <constraint firstItem="zAk-Ni-JZx" firstAttribute="top" secondItem="6IM-Tg-xMc" secondAttribute="bottom" constant="15" id="YkU-4O-Vy7"/>
+                                    <constraint firstItem="6IM-Tg-xMc" firstAttribute="leading" secondItem="CDm-Dq-K1l" secondAttribute="leading" constant="33" id="nIb-Ls-ski"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xqp-CW-MZB" secondAttribute="bottom" constant="5" id="xky-po-gal"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CDm-Dq-K1l" firstAttribute="centerX" secondItem="uPs-QV-CNq" secondAttribute="centerX" id="6fQ-1i-8iZ"/>
+                            <constraint firstItem="CDm-Dq-K1l" firstAttribute="centerY" secondItem="uPs-QV-CNq" secondAttribute="centerY" id="bNJ-0w-mYY"/>
+                            <constraint firstItem="CDm-Dq-K1l" firstAttribute="width" secondItem="wIq-5R-i9b" secondAttribute="width" multiplier="0.75" id="cCz-cs-L6x"/>
+                            <constraint firstItem="CDm-Dq-K1l" firstAttribute="height" secondItem="wIq-5R-i9b" secondAttribute="height" multiplier="0.4" id="yeL-Zt-Pec"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uPs-QV-CNq"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="CDm-Dq-K1l" id="Qg4-Fh-Lyj"/>
+                        <outlet property="taskTypePicker" destination="zAk-Ni-JZx" id="BW1-QR-qGV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z7A-vn-bYU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4074" y="1099"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JHx-zK-KPn">
