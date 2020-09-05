@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gTY-ii-Q4I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rT2-Me-a5J">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -25,13 +25,13 @@
                                 <rect key="frame" x="0.0" y="363.5" width="414" height="179"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Divida as tarefas diárias" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vw9-ez-ESI">
-                                        <rect key="frame" x="37" y="15" width="313.5" height="95.5"/>
+                                        <rect key="frame" x="37" y="15" width="250.5" height="93.5"/>
                                         <fontDescription key="fontDescription" name="NewYorkSmall-Heavy" family="New York Small" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Se todos fizerem um pouquinho, ninguém fica sobrecarregado" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYH-sJ-O3u">
-                                        <rect key="frame" x="37" y="126.5" width="291" height="48"/>
+                                        <rect key="frame" x="37" y="124.5" width="291" height="48"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <color key="textColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -820,10 +820,10 @@
             </objects>
             <point key="canvasLocation" x="1305.7971014492755" y="869.86607142857144"/>
         </scene>
-        <!--Tips View Controller-->
+        <!--Support View Controller-->
         <scene sceneID="giE-bR-181">
             <objects>
-                <viewController id="rT2-Me-a5J" customClass="TipsViewController" customModule="MegaHack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rT2-Me-a5J" customClass="SupportViewController" customModule="MegaHack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ph-tG-4xu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -834,7 +834,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9U-Sl-SrI">
                                         <rect key="frame" x="276" y="40.5" width="138" height="362.5"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="gb4-4s-h3F">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person2" translatesAutoresizingMaskIntoConstraints="NO" id="gb4-4s-h3F">
                                                 <rect key="frame" x="0.0" y="108.5" width="138" height="254"/>
                                             </imageView>
                                         </subviews>
@@ -865,7 +865,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99g-jw-gLO">
-                                        <rect key="frame" x="0.0" y="110.5" width="269" height="173.5"/>
+                                        <rect key="frame" x="0.0" y="110.5" width="269" height="149"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Casinha da Frida" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkk-FL-jkG">
                                                 <rect key="frame" x="32" y="5" width="119" height="19.5"/>
@@ -873,9 +873,9 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dicas de convivência" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHt-vL-rB4">
-                                                <rect key="frame" x="32" y="29.5" width="210.5" height="79"/>
-                                                <fontDescription key="fontDescription" name="NewYorkSmall-Heavy" family="New York Small" pointSize="33"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obrigações legais" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHt-vL-rB4">
+                                                <rect key="frame" x="32" y="29.5" width="203" height="76.5"/>
+                                                <fontDescription key="fontDescription" name="NewYorkSmall-Heavy" family="New York Small" pointSize="32"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -892,11 +892,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zdp-VB-hP7">
-                                        <rect key="frame" x="0.0" y="284" width="269" height="121"/>
+                                        <rect key="frame" x="0.0" y="259.5" width="269" height="121"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Melhore a convivência no seu ninho dividindo as tarefas domésticas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Oc-dY-BAz">
-                                                <rect key="frame" x="32" y="0.0" width="214" height="57.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Oc-dY-BAz">
+                                                <rect key="frame" x="32" y="0.0" width="227.5" height="54"/>
+                                                <string key="text">Precisa de algum suporte
+juridico para melhorar seu ninho? Informação é o melhor caminho.</string>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -921,7 +923,7 @@
                                     <constraint firstItem="99g-jw-gLO" firstAttribute="top" secondItem="t6Z-zu-8Qr" secondAttribute="bottom" id="UGD-YK-7DS"/>
                                     <constraint firstItem="99g-jw-gLO" firstAttribute="width" secondItem="pf4-Zk-7Ag" secondAttribute="width" multiplier="0.65" id="V9e-q3-PMO"/>
                                     <constraint firstAttribute="leading" secondItem="t6Z-zu-8Qr" secondAttribute="leading" id="X4O-cE-QrE"/>
-                                    <constraint firstItem="99g-jw-gLO" firstAttribute="height" secondItem="pf4-Zk-7Ag" secondAttribute="height" multiplier="0.43" id="c8b-Ip-32r"/>
+                                    <constraint firstItem="99g-jw-gLO" firstAttribute="height" secondItem="pf4-Zk-7Ag" secondAttribute="height" multiplier="0.37" id="c8b-Ip-32r"/>
                                     <constraint firstItem="99g-jw-gLO" firstAttribute="leading" secondItem="pf4-Zk-7Ag" secondAttribute="leading" id="cFQ-NA-bYU"/>
                                     <constraint firstItem="c9U-Sl-SrI" firstAttribute="height" secondItem="pf4-Zk-7Ag" secondAttribute="height" multiplier="0.9" id="dTz-VR-ExR"/>
                                     <constraint firstItem="Zdp-VB-hP7" firstAttribute="height" secondItem="pf4-Zk-7Ag" secondAttribute="height" multiplier="0.3" id="n1C-9m-E2V"/>
@@ -948,6 +950,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jei-Sm-v2E"/>
                     </view>
+                    <connections>
+                        <outlet property="homeLabel" destination="vkk-FL-jkG" id="zFr-hQ-GTM"/>
+                        <outlet property="subtitleLabel" destination="5Oc-dY-BAz" id="qv8-f5-a6l"/>
+                        <outlet property="tableViewContainer" destination="dwG-Ip-iVy" id="UCe-T2-AMG"/>
+                        <outlet property="titleLabel" destination="eHt-vL-rB4" id="f7y-gW-z67"/>
+                        <outlet property="topContainer" destination="pf4-Zk-7Ag" id="Yr8-Ho-ajw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cHX-t6-YrV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -986,6 +995,7 @@
         <image name="close-orange" width="45" height="45"/>
         <image name="logo" width="107" height="79"/>
         <image name="person" width="177" height="288"/>
+        <image name="person2" width="179" height="278"/>
         <image name="plus" width="63" height="63"/>
     </resources>
 </document>
