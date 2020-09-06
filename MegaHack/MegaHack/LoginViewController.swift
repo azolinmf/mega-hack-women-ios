@@ -11,7 +11,7 @@ import AuthenticationServices
 import GoogleSignIn
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GIDSignInDelegate {
     
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var signInButton: GIDSignInButton!
@@ -28,43 +28,33 @@ class LoginViewController: UIViewController {
         
         appleSignInConfig()
         
+        googleSignInConfig()
+    }
+    
+    func googleSignInConfig() {
+        GIDSignIn.sharedInstance().clientID = "1042550771993-4m62k24fim50lmr6envmffkj40pgb3no.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
         signInButton.style = GIDSignInButtonStyle.wide
     }
     
-    func appleSignInConfig() {
-        let siwaButton = ASAuthorizationAppleIDButton()
-        siwaButton.translatesAutoresizingMaskIntoConstraints = false
-        siwaView.addSubview(siwaButton)
-        NSLayoutConstraint.activate([
-            siwaButton.leadingAnchor.constraint(equalTo: siwaView.safeAreaLayoutGuide.leadingAnchor, constant: 0.0),
-            siwaButton.trailingAnchor.constraint(equalTo: siwaView.safeAreaLayoutGuide.trailingAnchor, constant: 0.0),
-            siwaButton.widthAnchor.constraint(equalTo: signInButton.safeAreaLayoutGuide.widthAnchor),
-            siwaButton.heightAnchor.constraint(equalTo: signInButton.safeAreaLayoutGuide.heightAnchor)
-        ])
-        siwaButton.addTarget(self, action: #selector(appleSignInTapped), for: .touchUpInside)
-    }
-    
-    @objc func appleSignInTapped() {
-        let provider = ASAuthorizationAppleIDProvider()
-        let request = provider.createRequest()
-        // request full name and email from the user's Apple ID
-        request.requestedScopes = [.fullName, .email]
-        
-        // pass the request to the initializer of the controller
-        let authController = ASAuthorizationController(authorizationRequests: [request])
-        
-        // similar to delegate, this will ask the view controller
-        // which window to present the ASAuthorizationController
-        authController.presentationContextProvider = self
-        
-        // delegate functions will be called when user data is
-        // successfully retrieved or error occured
-        authController.delegate = self
-        
-        // show the Sign-in with Apple dialog
-        authController.performRequests()
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if (error == nil) {
+            Profile.shared.userID = user.userID
+            Profile.shared.name = user.profile.givenName
+            if user.profile.hasImage {
+                Profile.shared.photo = user.profile.imageURL(withDimension: 50)
+            }
+            
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "newHome") as! NewHomeViewController
+            newViewController.modalPresentationStyle = .fullScreen
+            self.present(newViewController, animated: true, completion: nil)
+            
+        } else {
+          print("\(error.localizedDescription)")
+        }
     }
     
     func labelUI() {
@@ -156,6 +146,40 @@ extension LoginViewController : ASAuthorizationControllerDelegate {
             
             // do what you want with the data here
         }
+    }
+    
+    func appleSignInConfig() {
+        let siwaButton = ASAuthorizationAppleIDButton()
+        siwaButton.translatesAutoresizingMaskIntoConstraints = false
+        siwaView.addSubview(siwaButton)
+        NSLayoutConstraint.activate([
+            siwaButton.leadingAnchor.constraint(equalTo: siwaView.safeAreaLayoutGuide.leadingAnchor, constant: 0.0),
+            siwaButton.trailingAnchor.constraint(equalTo: siwaView.safeAreaLayoutGuide.trailingAnchor, constant: 0.0),
+            siwaButton.widthAnchor.constraint(equalTo: signInButton.safeAreaLayoutGuide.widthAnchor),
+            siwaButton.heightAnchor.constraint(equalTo: signInButton.safeAreaLayoutGuide.heightAnchor)
+        ])
+        siwaButton.addTarget(self, action: #selector(appleSignInTapped), for: .touchUpInside)
+    }
+    
+    @objc func appleSignInTapped() {
+        let provider = ASAuthorizationAppleIDProvider()
+        let request = provider.createRequest()
+        // request full name and email from the user's Apple ID
+        request.requestedScopes = [.fullName, .email]
+        
+        // pass the request to the initializer of the controller
+        let authController = ASAuthorizationController(authorizationRequests: [request])
+        
+        // similar to delegate, this will ask the view controller
+        // which window to present the ASAuthorizationController
+        authController.presentationContextProvider = self
+        
+        // delegate functions will be called when user data is
+        // successfully retrieved or error occured
+        authController.delegate = self
+        
+        // show the Sign-in with Apple dialog
+        authController.performRequests()
     }
 }
 

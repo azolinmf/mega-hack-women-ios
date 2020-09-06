@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nl2-Fv-vUq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -25,13 +25,13 @@
                                 <rect key="frame" x="0.0" y="363.5" width="414" height="179"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Divida as tarefas diárias" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vw9-ez-ESI">
-                                        <rect key="frame" x="37" y="15" width="313.5" height="95.5"/>
+                                        <rect key="frame" x="37" y="15" width="250.5" height="93.5"/>
                                         <fontDescription key="fontDescription" name="NewYorkSmall-Heavy" family="New York Small" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Se todos fizerem um pouquinho, ninguém fica sobrecarregado" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYH-sJ-O3u">
-                                        <rect key="frame" x="37" y="126.5" width="291" height="48"/>
+                                        <rect key="frame" x="37" y="124.5" width="291" height="48"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <color key="textColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -113,13 +113,13 @@
                                         <rect key="frame" x="0.0" y="50" width="414" height="131.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set, 01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pby-uO-4rH">
-                                                <rect key="frame" x="33" y="55.5" width="114.5" height="39.5"/>
+                                                <rect key="frame" x="33" y="55.5" width="105" height="38.5"/>
                                                 <fontDescription key="fontDescription" name="NewYorkSmall-Heavy" family="New York Small" pointSize="33"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgn-Wt-Esl">
-                                                <rect key="frame" x="264" y="58" width="117" height="37"/>
+                                                <rect key="frame" x="264" y="57" width="117" height="37"/>
                                                 <color key="backgroundColor" red="0.95294117647058818" green="0.68235294117647061" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
@@ -172,7 +172,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzJ-yh-vcx">
-                                                            <rect key="frame" x="34" y="20.5" width="30.5" height="30"/>
+                                                            <rect key="frame" x="35" y="20.5" width="28" height="30"/>
                                                             <fontDescription key="fontDescription" name="NewYorkSmall-Heavy" family="New York Small" pointSize="25"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -709,13 +709,13 @@
                                 <rect key="frame" x="52" y="274" width="310.5" height="358"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qt4-T1-3nd">
-                                        <rect key="frame" x="33" y="20" width="56" height="27"/>
+                                        <rect key="frame" x="33" y="20" width="46.5" height="26"/>
                                         <fontDescription key="fontDescription" name="NewYorkSmall-Heavy" family="New York Small" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="zaQ-AF-LpT">
-                                        <rect key="frame" x="33" y="62" width="244.5" height="250.5"/>
+                                        <rect key="frame" x="33" y="61" width="244.5" height="250.5"/>
                                         <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
                                             <!--1970-01-01 11:00:00 +0000-->
                                         </date>
@@ -734,7 +734,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqK-Tv-li0">
-                                        <rect key="frame" x="265.5" y="18.5" width="30" height="30"/>
+                                        <rect key="frame" x="265.5" y="18" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="LUK-vk-gWy"/>
                                             <constraint firstAttribute="height" constant="30" id="lss-6J-1Kz"/>
@@ -1092,7 +1092,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obrigações legais" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHt-vL-rB4">
-                                                <rect key="frame" x="32" y="29.5" width="203" height="76.5"/>
+                                                <rect key="frame" x="32" y="29.5" width="174.5" height="75"/>
                                                 <fontDescription key="fontDescription" name="NewYorkSmall-Heavy" family="New York Small" pointSize="32"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1208,7 +1208,7 @@ juridico para melhorar seu ninho? Informação é o melhor caminho.</string>
         <!--New Home View Controller-->
         <scene sceneID="kUp-iZ-Ir7">
             <objects>
-                <viewController id="qHv-vt-RsC" customClass="NewHomeViewController" customModule="MegaHack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newHome" id="qHv-vt-RsC" customClass="NewHomeViewController" customModule="MegaHack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pcP-TA-mUG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1294,39 +1294,33 @@ juridico para melhorar seu ninho? Informação é o melhor caminho.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPv-vS-7fM">
-                                                <rect key="frame" x="323.5" y="33.5" width="58.5" height="58.5"/>
+                                                <rect key="frame" x="332" y="52" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qPv-vS-7fM" secondAttribute="height" multiplier="1:1" id="f15-RC-Xl8"/>
+                                                    <constraint firstAttribute="height" constant="50" id="iUN-Jb-8ib"/>
                                                 </constraints>
                                                 <state key="normal" image="add"/>
                                                 <connections>
                                                     <action selector="didPressAddPersonButton:" destination="qHv-vt-RsC" eventType="touchUpInside" id="rw3-Du-uq2"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vlS-Gp-dL8">
-                                                <rect key="frame" x="32" y="32" width="45" height="61.5"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close-orange" translatesAutoresizingMaskIntoConstraints="NO" id="SF3-6y-KJG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="61.5"/>
-                                                    </imageView>
-                                                </subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close-orange" translatesAutoresizingMaskIntoConstraints="NO" id="SF3-6y-KJG">
+                                                <rect key="frame" x="32" y="52" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstItem="SF3-6y-KJG" firstAttribute="height" secondItem="vlS-Gp-dL8" secondAttribute="height" id="Ptc-V6-nww"/>
+                                                    <constraint firstAttribute="width" constant="50" id="E5x-mv-KxN"/>
+                                                    <constraint firstAttribute="height" constant="50" id="bA4-oY-L6G"/>
                                                 </constraints>
-                                            </stackView>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="qPv-vS-7fM" firstAttribute="centerY" secondItem="SF3-6y-KJG" secondAttribute="centerY" id="FYd-DT-cY5"/>
-                                            <constraint firstItem="vlS-Gp-dL8" firstAttribute="leading" secondItem="pdA-ou-dQ3" secondAttribute="leading" id="L5G-Hi-bES"/>
                                             <constraint firstItem="pdA-ou-dQ3" firstAttribute="top" secondItem="lTV-gm-N9z" secondAttribute="top" constant="5" id="Ldx-U1-em8"/>
                                             <constraint firstAttribute="trailing" secondItem="qPv-vS-7fM" secondAttribute="trailing" constant="32" id="OhV-f9-roh"/>
-                                            <constraint firstItem="vlS-Gp-dL8" firstAttribute="top" secondItem="pdA-ou-dQ3" secondAttribute="bottom" constant="10" id="cK8-FK-6KN"/>
-                                            <constraint firstItem="qPv-vS-7fM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vlS-Gp-dL8" secondAttribute="trailing" constant="15" id="jrR-aQ-d6x"/>
-                                            <constraint firstItem="qPv-vS-7fM" firstAttribute="height" secondItem="lTV-gm-N9z" secondAttribute="height" multiplier="0.38" id="kga-pj-YHQ"/>
-                                            <constraint firstItem="vlS-Gp-dL8" firstAttribute="height" secondItem="lTV-gm-N9z" secondAttribute="height" multiplier="0.4" id="oTv-Fg-IPZ"/>
+                                            <constraint firstItem="SF3-6y-KJG" firstAttribute="leading" secondItem="pdA-ou-dQ3" secondAttribute="leading" id="SML-xy-STi"/>
+                                            <constraint firstItem="SF3-6y-KJG" firstAttribute="centerY" secondItem="lTV-gm-N9z" secondAttribute="centerY" id="p08-vT-3Qe"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pdA-ou-dQ3" secondAttribute="trailing" constant="32" id="uCU-pa-ca6"/>
                                             <constraint firstItem="pdA-ou-dQ3" firstAttribute="leading" secondItem="lTV-gm-N9z" secondAttribute="leading" constant="32" id="vk8-vO-Aa0"/>
+                                            <constraint firstItem="qPv-vS-7fM" firstAttribute="top" secondItem="SF3-6y-KJG" secondAttribute="top" id="xkV-fO-e45"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sss-bg-NGr">
