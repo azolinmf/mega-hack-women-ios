@@ -16,6 +16,8 @@ class NewTaskViewController: UIViewController, UIPopoverPresentationControllerDe
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     
+    @IBOutlet weak var myPhoto: UIImageView!
+    
     let calendar = Calendar.current
     var type = 0
     var date = Date()
@@ -46,6 +48,9 @@ class NewTaskViewController: UIViewController, UIPopoverPresentationControllerDe
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        profilePhotoUI()
+        loadProfileImage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +58,19 @@ class NewTaskViewController: UIViewController, UIPopoverPresentationControllerDe
         name = ""
         dataButton.setTitle("Data", for: .normal)
         taskTypeButton.setTitle("Tipo da tarefa", for: .normal)
+    }
+    
+    func profilePhotoUI() {
+        myPhoto.layer.borderWidth = 1
+        myPhoto.layer.masksToBounds = false
+        myPhoto.layer.borderColor = UIColor.white.cgColor
+        myPhoto.layer.cornerRadius = myPhoto.frame.height/2
+        myPhoto.clipsToBounds = true
+    }
+    
+    func loadProfileImage() {
+        let url = Profile.shared.photo
+        downloadImage(from: url)
     }
 
     @IBAction func didPressTaskType(_ sender: Any) {
@@ -152,5 +170,21 @@ extension NewTaskViewController {
         }
         enableCreate()
         return false
+    }
+    
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
+    func downloadImage(from url: URL) {
+        print("Download Started")
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() { [weak self] in
+                self?.myPhoto.image = UIImage(data: data)
+            }
+        }
     }
 }

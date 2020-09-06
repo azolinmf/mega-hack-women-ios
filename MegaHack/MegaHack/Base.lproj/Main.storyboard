@@ -327,11 +327,30 @@
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bird" translatesAutoresizingMaskIntoConstraints="NO" id="qww-gu-ucz">
+                                                <rect key="frame" x="33" y="32" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="1iX-9I-jE7"/>
+                                                    <constraint firstAttribute="height" constant="50" id="rLx-wO-qpu"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEa-U1-2Fv">
+                                                <rect key="frame" x="332" y="33" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="Nhc-Dr-7EP"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Y4j-ik-m2i"/>
+                                                </constraints>
+                                                <state key="normal" image="add"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="LKM-Gt-rtq" firstAttribute="top" secondItem="LFc-Kc-UfR" secondAttribute="top" constant="5" id="2tb-4o-56c"/>
+                                            <constraint firstItem="qww-gu-ucz" firstAttribute="top" secondItem="LKM-Gt-rtq" secondAttribute="bottom" constant="10" id="P5A-2G-RUc"/>
+                                            <constraint firstItem="OEa-U1-2Fv" firstAttribute="centerY" secondItem="LFc-Kc-UfR" secondAttribute="centerY" id="Vb0-d7-XCU"/>
+                                            <constraint firstAttribute="trailing" secondItem="OEa-U1-2Fv" secondAttribute="trailing" constant="32" id="Yxz-0t-Goh"/>
                                             <constraint firstItem="LKM-Gt-rtq" firstAttribute="leading" secondItem="LFc-Kc-UfR" secondAttribute="leading" constant="33" id="aa6-TF-qWb"/>
+                                            <constraint firstItem="qww-gu-ucz" firstAttribute="leading" secondItem="LKM-Gt-rtq" secondAttribute="leading" id="hPE-Nj-5Yb"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWw-pS-yfQ">
@@ -450,7 +469,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqV-Pf-4Mj">
                                 <rect key="frame" x="30" y="81.5" width="45" height="45"/>
-                                <state key="normal" image="close"/>
+                                <state key="normal" image="close-white"/>
                                 <connections>
                                     <action selector="didPressCloseButton:" destination="uMA-yc-kQP" eventType="touchUpInside" id="FiQ-fI-ftx"/>
                                 </connections>
@@ -472,6 +491,7 @@
                         <outlet property="containerView" destination="MNM-Z7-TK9" id="vOT-FO-m5F"/>
                         <outlet property="createButton" destination="W5n-Rx-tLE" id="eMf-1E-ki3"/>
                         <outlet property="dataButton" destination="lWR-3n-YLL" id="AIQ-jx-5GO"/>
+                        <outlet property="myPhoto" destination="qww-gu-ucz" id="NGq-FU-yow"/>
                         <outlet property="nameTextField" destination="fI4-Zd-rI3" id="Rcd-Sg-Cao"/>
                         <outlet property="taskTypeButton" destination="s3c-dr-fD7" id="nNK-UM-oKr"/>
                     </connections>
@@ -1334,7 +1354,7 @@ juridico para melhorar seu ninho? Informação é o melhor caminho.</string>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPv-vS-7fM">
+                                            <button opaque="NO" contentMode="scaleAspectFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPv-vS-7fM">
                                                 <rect key="frame" x="332" y="52" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qPv-vS-7fM" secondAttribute="height" multiplier="1:1" id="f15-RC-Xl8"/>
@@ -1345,7 +1365,7 @@ juridico para melhorar seu ninho? Informação é o melhor caminho.</string>
                                                     <action selector="didPressAddPersonButton:" destination="qHv-vt-RsC" eventType="touchUpInside" id="rw3-Du-uq2"/>
                                                 </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close-orange" translatesAutoresizingMaskIntoConstraints="NO" id="SF3-6y-KJG">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bird" translatesAutoresizingMaskIntoConstraints="NO" id="SF3-6y-KJG">
                                                 <rect key="frame" x="32" y="52" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="E5x-mv-KxN"/>
@@ -1445,10 +1465,11 @@ juridico para melhorar seu ninho? Informação é o melhor caminho.</string>
     <resources>
         <image name="add" width="57" height="57"/>
         <image name="back" width="36" height="36"/>
+        <image name="bird" width="57" height="57"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="circle" catalog="system" width="128" height="121"/>
-        <image name="close" width="45" height="45"/>
         <image name="close-orange" width="45" height="45"/>
+        <image name="close-white" width="45" height="45"/>
         <image name="empty" width="107" height="36"/>
         <image name="logo" width="107" height="79"/>
         <image name="menu-icon" width="46" height="13"/>
