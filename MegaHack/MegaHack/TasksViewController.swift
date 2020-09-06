@@ -223,4 +223,8 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
         return headerView
     }
     
+    @IBAction func didPressNewTaskButton(_ sender: Any) {
+        tabBarController?.selectedIndex = 1
+    }
+    
 }
