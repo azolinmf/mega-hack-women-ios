@@ -34,7 +34,8 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        topView.layer.cornerRadius = 30.0
+        topView.layer.cornerRadius = 50.0
+        topView.layer.maskedCorners = [.layerMinXMaxYCorner]
         newTaskButton.layer.cornerRadius = 18.0
         
         daysCollectionView.delegate = self
