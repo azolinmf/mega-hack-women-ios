@@ -11,5 +11,6 @@ target 'MegaHack' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  pod 'SideMenu'
 	
 end

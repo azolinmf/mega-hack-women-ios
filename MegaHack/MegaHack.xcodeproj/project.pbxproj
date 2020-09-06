@@ -17,6 +17,7 @@
 		9D68715125044A600032D1BE /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D68715025044A600032D1BE /* SupportViewController.swift */; };
 		9D68715325045A4B0032D1BE /* NewHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D68715225045A4B0032D1BE /* NewHomeViewController.swift */; };
 		9D68715525045CA30032D1BE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D68715425045CA30032D1BE /* Home.swift */; };
+		9D68715725050C230032D1BE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D68715625050C230032D1BE /* MenuViewController.swift */; };
 		9DC0620E2501AB0C00FA8600 /* NewYorkSmallHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DC0620D2501AB0C00FA8600 /* NewYorkSmallHeavy.otf */; };
 		9DC062102501B1B900FA8600 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0620F2501B1B900FA8600 /* LoginViewController.swift */; };
 		9DC062122501CAA500FA8600 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062112501CAA500FA8600 /* TasksViewController.swift */; };
@@ -49,6 +50,7 @@
 		9D68715025044A600032D1BE /* SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 		9D68715225045A4B0032D1BE /* NewHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHomeViewController.swift; sourceTree = "<group>"; };
 		9D68715425045CA30032D1BE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		9D68715625050C230032D1BE /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		9DC0620D2501AB0C00FA8600 /* NewYorkSmallHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewYorkSmallHeavy.otf; sourceTree = "<group>"; };
 		9DC0620F2501B1B900FA8600 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9DC062112501CAA500FA8600 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				9D68715025044A600032D1BE /* SupportViewController.swift */,
 				9D68715225045A4B0032D1BE /* NewHomeViewController.swift */,
 				9D68715425045CA30032D1BE /* Home.swift */,
+				9D68715625050C230032D1BE /* MenuViewController.swift */,
 			);
 			path = MegaHack;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				9DC062102501B1B900FA8600 /* LoginViewController.swift in Sources */,
 				9DC062122501CAA500FA8600 /* TasksViewController.swift in Sources */,
 				9DC0621F2502E5AF00FA8600 /* NewTaskViewController.swift in Sources */,
+				9D68715725050C230032D1BE /* MenuViewController.swift in Sources */,
 				9D20017824FDD25200B8FC50 /* AppDelegate.swift in Sources */,
 				9D20017A24FDD25200B8FC50 /* SceneDelegate.swift in Sources */,
 				9DC0621B2502768700FA8600 /* Task.swift in Sources */,
