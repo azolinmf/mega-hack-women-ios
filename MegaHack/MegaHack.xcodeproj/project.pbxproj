@@ -19,6 +19,9 @@
 		9D68715525045CA30032D1BE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D68715425045CA30032D1BE /* Home.swift */; };
 		9D68715725050C230032D1BE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D68715625050C230032D1BE /* MenuViewController.swift */; };
 		9D6EB53C25051B8D00FB052B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EB53B25051B8D00FB052B /* Profile.swift */; };
+		9D6EB54025052AAB00FB052B /* DAOFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EB53F25052AAB00FB052B /* DAOFirebase.swift */; };
+		9D6EB5442505306300FB052B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EB5432505306300FB052B /* Model.swift */; };
+		9D6EB546250537A200FB052B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EB545250537A100FB052B /* Account.swift */; };
 		9DC0620E2501AB0C00FA8600 /* NewYorkSmallHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DC0620D2501AB0C00FA8600 /* NewYorkSmallHeavy.otf */; };
 		9DC062102501B1B900FA8600 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0620F2501B1B900FA8600 /* LoginViewController.swift */; };
 		9DC062122501CAA500FA8600 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062112501CAA500FA8600 /* TasksViewController.swift */; };
@@ -30,7 +33,6 @@
 		9DC062212502FCD600FA8600 /* DataPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062202502FCD600FA8600 /* DataPickerViewController.swift */; };
 		9DC0622325030B7600FA8600 /* TaskPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0622225030B7600FA8600 /* TaskPickerViewController.swift */; };
 		9DC062252503221700FA8600 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062242503221700FA8600 /* TaskList.swift */; };
-		9DC062272503242000FA8600 /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062262503242000FA8600 /* TaskType.swift */; };
 		9DC062292504133300FA8600 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062282504133300FA8600 /* TipsViewController.swift */; };
 		EA96B565F95F797625721AD8 /* Pods_MegaHack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917EA891DE21A1869180A4CD /* Pods_MegaHack.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,9 @@
 		9D68715425045CA30032D1BE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		9D68715625050C230032D1BE /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		9D6EB53B25051B8D00FB052B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		9D6EB53F25052AAB00FB052B /* DAOFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAOFirebase.swift; sourceTree = "<group>"; };
+		9D6EB5432505306300FB052B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		9D6EB545250537A100FB052B /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		9DC0620D2501AB0C00FA8600 /* NewYorkSmallHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewYorkSmallHeavy.otf; sourceTree = "<group>"; };
 		9DC0620F2501B1B900FA8600 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9DC062112501CAA500FA8600 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +70,6 @@
 		9DC062202502FCD600FA8600 /* DataPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPickerViewController.swift; sourceTree = "<group>"; };
 		9DC0622225030B7600FA8600 /* TaskPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPickerViewController.swift; sourceTree = "<group>"; };
 		9DC062242503221700FA8600 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
-		9DC062262503242000FA8600 /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
 		9DC062282504133300FA8600 /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,7 +133,6 @@
 				9DC062202502FCD600FA8600 /* DataPickerViewController.swift */,
 				9DC0622225030B7600FA8600 /* TaskPickerViewController.swift */,
 				9DC062242503221700FA8600 /* TaskList.swift */,
-				9DC062262503242000FA8600 /* TaskType.swift */,
 				9DC062282504133300FA8600 /* TipsViewController.swift */,
 				9D68714E250421C80032D1BE /* TipCell.swift */,
 				9D68715025044A600032D1BE /* SupportViewController.swift */,
@@ -137,6 +140,9 @@
 				9D68715425045CA30032D1BE /* Home.swift */,
 				9D68715625050C230032D1BE /* MenuViewController.swift */,
 				9D6EB53B25051B8D00FB052B /* Profile.swift */,
+				9D6EB53F25052AAB00FB052B /* DAOFirebase.swift */,
+				9D6EB5432505306300FB052B /* Model.swift */,
+				9D6EB545250537A100FB052B /* Account.swift */,
 			);
 			path = MegaHack;
 			sourceTree = "<group>";
@@ -302,9 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DC062252503221700FA8600 /* TaskList.swift in Sources */,
+				9D6EB54025052AAB00FB052B /* DAOFirebase.swift in Sources */,
 				9D6EB53C25051B8D00FB052B /* Profile.swift in Sources */,
 				9DC0622325030B7600FA8600 /* TaskPickerViewController.swift in Sources */,
 				9D68715125044A600032D1BE /* SupportViewController.swift in Sources */,
+				9D6EB546250537A200FB052B /* Account.swift in Sources */,
 				9DC062292504133300FA8600 /* TipsViewController.swift in Sources */,
 				9D68715525045CA30032D1BE /* Home.swift in Sources */,
 				9D68715325045A4B0032D1BE /* NewHomeViewController.swift in Sources */,
@@ -312,8 +320,8 @@
 				9DC0621D250277E800FA8600 /* TaskTableViewCell.swift in Sources */,
 				9DC062182501D07600FA8600 /* DaysCell.swift in Sources */,
 				9D68714F250421C80032D1BE /* TipCell.swift in Sources */,
-				9DC062272503242000FA8600 /* TaskType.swift in Sources */,
 				9DC062102501B1B900FA8600 /* LoginViewController.swift in Sources */,
+				9D6EB5442505306300FB052B /* Model.swift in Sources */,
 				9DC062122501CAA500FA8600 /* TasksViewController.swift in Sources */,
 				9DC0621F2502E5AF00FA8600 /* NewTaskViewController.swift in Sources */,
 				9D68715725050C230032D1BE /* MenuViewController.swift in Sources */,

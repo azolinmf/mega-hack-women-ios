@@ -17,6 +17,8 @@ class NewHomeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var bottomContainer: UIView!
     
+    var homeName = "Minha Casa"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,7 +51,18 @@ class NewHomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func didPressCreateButton(_ sender: Any) {
-        let newHome = Home(homeID: <#T##String#>, users: <#T##[String]#>, name: <#T##String#>)
+        Profile.shared.homeName = homeName
+        let homeID = UUID().uuidString
+        let homeMembers = [Profile.shared.userID]
+        let newHome = Home(homeID: homeID, users: homeMembers, name: homeName)
+        let newAccount = Account(homeID: homeID, userID: Profile.shared.userID)
+        
+        DAOFireBase.save(home: newHome, account: newAccount)
+        
+        if let tabbar = (storyboard?.instantiateViewController(withIdentifier: "tabBar") as? UITabBarController) {
+            tabbar.modalPresentationStyle = .fullScreen
+            self.present(tabbar, animated: true, completion: nil)
+        }
     }
     
 }
@@ -71,6 +84,9 @@ extension NewHomeViewController {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
+        if nameTextField != nil {
+            homeName = nameTextField.text ?? "Minha Casa"
+        }
         return false
     }
     

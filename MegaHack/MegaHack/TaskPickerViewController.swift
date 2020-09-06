@@ -9,14 +9,14 @@
 import UIKit
 
 protocol TaskPickerDelegate: class {
-    func typeWasChosen(_ type: TaskType)
+    func typeWasChosen(_ type: Int)
 }
 
 class TaskPickerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var taskTypePicker: UIPickerView!
-    var pickerData: [TaskType] = [TaskType]()
+    var pickerData: [String] = [String]()
     
     weak var delegate: TaskPickerDelegate?
     
@@ -25,7 +25,7 @@ class TaskPickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
         containerView.layer.cornerRadius = 15.0
         
-        pickerData = [TaskType.domestic, TaskType.shopping]
+        pickerData = ["Tarefa Doméstica", "Compras"]
         taskTypePicker.delegate = self
         taskTypePicker.dataSource = self
     }
@@ -39,7 +39,7 @@ class TaskPickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row].rawValue
+        return pickerData[row]
     }
     
     @IBAction func didPressCloseButton(_ sender: Any) {
@@ -49,11 +49,8 @@ class TaskPickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     @IBAction func didPressOkButton(_ sender: Any) {
         let chosenType = taskTypePicker.selectedRow(inComponent: 0)
-        if chosenType == 0 {
-            delegate?.typeWasChosen(TaskType.domestic)
-        } else if chosenType == 1 {
-           delegate?.typeWasChosen(TaskType.shopping)
-        }
+        delegate?.typeWasChosen(chosenType)
+        
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
