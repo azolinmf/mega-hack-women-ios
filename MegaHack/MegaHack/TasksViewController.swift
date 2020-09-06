@@ -25,11 +25,13 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var tasksTableView: UITableView!
     @IBOutlet weak var todayLabel: UILabel!
     
+    @IBOutlet weak var homeNameLabel: UILabel!
+    
     let date = Date()
     let calendar = Calendar.current
     var selectedIndex = 0
     var selectedDay = 0
-    var tasks = TaskList.shared.tasks
+    var tasks = Model.instance.tasks
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,15 +50,17 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
         selectedDay = today
         
         todayLabel.text = intToMonth(month: thisMonth) + ", " + String(today)
+        homeNameLabel.text = Profile.shared.homeName
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
-        
-        tasks = TaskList.shared.tasks
-        if tasksTableView != nil {
-            tasksTableView.reloadData()
-            self.view.layoutIfNeeded()
+        DAOFireBase.load {
+            self.tasks = Model.instance.tasks
+            if self.tasksTableView != nil {
+                self.tasksTableView.reloadData()
+                self.view.layoutIfNeeded()
+            }
         }
     }
     
@@ -164,7 +168,7 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskTableViewCell
-        
+                
         cell.isHidden = true
         cell.layer.cornerRadius = 8.0
         cell.containerView.layer.cornerRadius = 8.0
@@ -172,17 +176,31 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
         let task = tasks[indexPath.row]
         
         cell.titleLabel.text = task.title
-        cell.typeLabel.text = task.type.rawValue
+        cell.typeLabel.text = convertTaskType(type: task.type)
         
         if selectedDay == task.date {
             cell.isHidden = false
         }
         
+        let owners = task.owners
+        if !owners.contains(Profile.shared.userID) {
+            cell.isHidden = true
+        }
+        
         return cell
     }
     
+    func convertTaskType(type: Int) -> String {
+        if type == 0 {
+            return "TAREFA DOMÉSTICA"
+        } else {
+            return "COMPRAS"
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if tasks[indexPath.row].date == selectedDay {
+        let task = tasks[indexPath.row]
+        if task.date == selectedDay && task.owners.contains(Profile.shared.userID) {
             return 75
         }
         return 0

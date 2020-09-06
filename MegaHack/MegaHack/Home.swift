@@ -19,4 +19,24 @@ class Home {
     var users: [String]
     var name: String
     
+    func mapToDictionary() -> [String: Any] {
+        var homesData: [String:Any] = [:]
+        
+        homesData["homeID"] = self.homeID
+        homesData["name"] = self.name
+        homesData["users"] = self.users
+        
+        return homesData
+    }
+    
+    static func mapToObject(homesData: [String: Any]) -> Home {
+        
+        let homeID:String = homesData["homeID"] as? String ?? ""
+        let users:[String] = homesData["users"] as? [String] ?? []
+        let name:String = homesData["name"] as? String ?? ""
+
+        let home = Home(homeID: homeID, users: users, name: name)
+        
+        return home
+    }
 }
