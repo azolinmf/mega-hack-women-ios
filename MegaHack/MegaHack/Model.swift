@@ -18,4 +18,5 @@ class Model {
     
     var homes: [Home] = []
     var accounts: [Account] = []
+    var tasks: [Task] = []
 }

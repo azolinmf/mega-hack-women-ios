@@ -31,7 +31,7 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
     let calendar = Calendar.current
     var selectedIndex = 0
     var selectedDay = 0
-    var tasks = TaskList.shared.tasks
+    var tasks = Model.instance.tasks
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,11 +55,12 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
-        
-        tasks = TaskList.shared.tasks
-        if tasksTableView != nil {
-            tasksTableView.reloadData()
-            self.view.layoutIfNeeded()
+        DAOFireBase.load {
+            self.tasks = Model.instance.tasks
+            if self.tasksTableView != nil {
+                self.tasksTableView.reloadData()
+                self.view.layoutIfNeeded()
+            }
         }
     }
     
@@ -168,6 +169,12 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskTableViewCell
         
+        //TODO: Só mostrar a task se eu for owner
+        //pra ver quem é owner:
+        //procura a task no Model.tasks
+        //ve se os userID batem (meu e do model)
+        //meu: Profile.userID
+        
         cell.isHidden = true
         cell.layer.cornerRadius = 8.0
         cell.containerView.layer.cornerRadius = 8.0
@@ -175,13 +182,21 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
         let task = tasks[indexPath.row]
         
         cell.titleLabel.text = task.title
-        cell.typeLabel.text = task.type.rawValue
+        cell.typeLabel.text = convertTaskType(type: task.type)
         
         if selectedDay == task.date {
             cell.isHidden = false
         }
         
         return cell
+    }
+    
+    func convertTaskType(type: Int) -> String {
+        if type == 0 {
+            return "TAREFA DOMÉSTICA"
+        } else {
+            return "COMPRAS"
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

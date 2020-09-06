@@ -17,7 +17,7 @@ class NewTaskViewController: UIViewController, UIPopoverPresentationControllerDe
     @IBOutlet weak var nameTextField: UITextField!
     
     let calendar = Calendar.current
-    var type = TaskType.domestic
+    var type = 0
     var date = Date()
     var dateWasChosen = false
     var typeWasChosen = false
@@ -69,8 +69,13 @@ class NewTaskViewController: UIViewController, UIPopoverPresentationControllerDe
         }
     }
     
-    func typeWasChosen(_ type: TaskType) {
-        taskTypeButton.setTitle(type.rawValue, for: .normal)
+    func typeWasChosen(_ type: Int) {
+        if type == 0 {
+            taskTypeButton.setTitle("TAREFA DOMÉSTICA", for: .normal)
+        } else if type == 1 {
+            taskTypeButton.setTitle("COMPRAS", for: .normal)
+        }
+        
         self.type = type
         typeWasChosen = true
         enableCreate()
@@ -96,8 +101,11 @@ class NewTaskViewController: UIViewController, UIPopoverPresentationControllerDe
     
     @IBAction func didPressCreateButton(_ sender: Any) {
         name = nameTextField.text ?? ""
-        let newTask = Task(title: name, type: type, date: calendar.component(.day, from: date))
-        TaskList.shared.tasks.append(newTask)
+        let taskID = UUID().uuidString
+        var owners = [Profile.shared.userID]
+        //TODO: dar append dos outros owners da task
+        let newTask = Task(title: name, type: type, date: calendar.component(.day, from: date), owners: owners)
+        DAOFireBase.save(task: newTask)
         
         tabBarController?.selectedIndex = 0
     }

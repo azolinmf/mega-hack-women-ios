@@ -39,6 +39,23 @@ class DAOFireBase {
         
     }
     
+    static func save(task: Task) {
+        
+        let db = Firestore.firestore()
+        
+        var ref: DocumentReference? = nil
+        
+        let taskData: [String:Any] = task.mapToDictionary()
+        ref = db.collection("tasks").addDocument(data: taskData) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+        
+    }
+    
     static func load(completion: @escaping ()->()) {
         
         let db = Firestore.firestore()
@@ -68,6 +85,21 @@ class DAOFireBase {
                 for document in querySnapshot!.documents {
                     let account = Account.mapToObject(accountData: document.data())
                     Model.instance.accounts.append(account)
+                }
+                completion()
+            }
+        }
+        
+        db.collection("tasks").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                
+                Model.instance.tasks.removeAll()
+                
+                for document in querySnapshot!.documents {
+                    let task = Task.mapToObject(tasksData: document.data())
+                    Model.instance.tasks.append(task)
                 }
                 completion()
             }
