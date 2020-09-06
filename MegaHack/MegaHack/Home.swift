@@ -9,12 +9,14 @@
 import Foundation
 
 class Home {
-    
-    static let shared = Home()
-    
-    private init() {
-        
+    internal init(homeID: String, users: [String], name: String) {
+        self.homeID = homeID
+        self.users = users
+        self.name = name
     }
     
+    var homeID: String
+    var users: [String]
+    var name: String
     
 }
