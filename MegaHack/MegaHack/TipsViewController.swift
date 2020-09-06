@@ -55,6 +55,11 @@ class TipsViewController: UIViewController {
         tableView.separatorStyle = .none
     }
     
+    
+    @IBAction func didPressBackButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     let tips = [
         Tip(title: "Hey, I just met you", descriptionText: "But here is my number, so call me maybe"),
         Tip(title: "Largado as traças", descriptionText: "Henrique e Julioano joao neto e frederico etc etc"),
