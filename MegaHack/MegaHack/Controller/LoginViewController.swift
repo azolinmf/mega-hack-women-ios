@@ -62,9 +62,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
                 Profile.shared.userID = user.userID
                 Profile.shared.name = user.profile.givenName
                 Profile.shared.homeName = getHomeName(userID: user.userID)
-                
-                //pegar tudo as tarefas tbm
-                
+                                
                 sendToTasksViewController()
             }
             

@@ -22,16 +22,28 @@ class NewHomeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initialUI()
+        
+        textFieldConfigs()
+        
+        profilePhotoUI()
+        loadProfileImage()
+        
+    }
+    
+    func initialUI() {
         createButton.layer.cornerRadius = 25.0
         bottomContainer.layer.cornerRadius = 40.0
-        
+    }
+    
+    func textFieldConfigs() {
         nameTextField?.delegate = self
         addressTextField?.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        profilePhotoUI()
-        loadProfileImage()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
     }
     
     func profilePhotoUI() {
@@ -51,6 +63,7 @@ class NewHomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func didPressCreateButton(_ sender: Any) {
+        checkHomeName()
         Profile.shared.homeName = homeName
         let homeID = UUID().uuidString
         let homeMembers = [Profile.shared.userID]
@@ -62,6 +75,12 @@ class NewHomeViewController: UIViewController, UITextFieldDelegate {
         if let tabbar = (storyboard?.instantiateViewController(withIdentifier: "tabBar") as? UITabBarController) {
             tabbar.modalPresentationStyle = .fullScreen
             self.present(tabbar, animated: true, completion: nil)
+        }
+    }
+    
+    func checkHomeName() {
+        if homeName == "" {
+            homeName = "Minha casa"
         }
     }
     
@@ -90,6 +109,12 @@ extension NewHomeViewController {
         return false
     }
     
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        nameTextField.resignFirstResponder()
+        homeName = nameTextField.text ?? "Minha casa"
+        addressTextField.resignFirstResponder()
+    }
+    
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
@@ -104,6 +129,16 @@ extension NewHomeViewController {
                 self?.myPhotoImage.image = UIImage(data: data)
             }
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let textFieldText = textField.text,
+            let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                return false
+        }
+        let substringToReplace = textFieldText[rangeOfTextToReplace]
+        let count = textFieldText.count - substringToReplace.count + string.count
+        return count <= 30
     }
 }
 

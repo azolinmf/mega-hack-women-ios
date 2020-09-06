@@ -22,6 +22,7 @@
 		9D6EB54025052AAB00FB052B /* DAOFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EB53F25052AAB00FB052B /* DAOFirebase.swift */; };
 		9D6EB5442505306300FB052B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EB5432505306300FB052B /* Model.swift */; };
 		9D6EB546250537A200FB052B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EB545250537A100FB052B /* Account.swift */; };
+		9D6EB54C25056E5300FB052B /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EB54B25056E5300FB052B /* UIColor+.swift */; };
 		9DC0620E2501AB0C00FA8600 /* NewYorkSmallHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DC0620D2501AB0C00FA8600 /* NewYorkSmallHeavy.otf */; };
 		9DC062102501B1B900FA8600 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0620F2501B1B900FA8600 /* LoginViewController.swift */; };
 		9DC062122501CAA500FA8600 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC062112501CAA500FA8600 /* TasksViewController.swift */; };
@@ -41,7 +42,7 @@
 		2395ABB41F77F5E6F512439D /* Pods-MegaHack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegaHack.release.xcconfig"; path = "Target Support Files/Pods-MegaHack/Pods-MegaHack.release.xcconfig"; sourceTree = "<group>"; };
 		70391941EBB5999F39C7EC8A /* Pods-MegaHack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegaHack.debug.xcconfig"; path = "Target Support Files/Pods-MegaHack/Pods-MegaHack.debug.xcconfig"; sourceTree = "<group>"; };
 		917EA891DE21A1869180A4CD /* Pods_MegaHack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MegaHack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D20017424FDD25200B8FC50 /* MegaHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MegaHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D20017424FDD25200B8FC50 /* Ninho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ninho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D20017724FDD25200B8FC50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D20017924FDD25200B8FC50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9D20017E24FDD25200B8FC50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 		9D6EB53F25052AAB00FB052B /* DAOFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAOFirebase.swift; sourceTree = "<group>"; };
 		9D6EB5432505306300FB052B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		9D6EB545250537A100FB052B /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		9D6EB54B25056E5300FB052B /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		9DC0620D2501AB0C00FA8600 /* NewYorkSmallHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewYorkSmallHeavy.otf; sourceTree = "<group>"; };
 		9DC0620F2501B1B900FA8600 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9DC062112501CAA500FA8600 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +108,7 @@
 		9D20017524FDD25200B8FC50 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9D20017424FDD25200B8FC50 /* MegaHack.app */,
+				9D20017424FDD25200B8FC50 /* Ninho.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,37 +116,70 @@
 		9D20017624FDD25200B8FC50 /* MegaHack */ = {
 			isa = PBXGroup;
 			children = (
-				9DC0621925025FDC00FA8600 /* MegaHack.entitlements */,
+				9D6EB54A25056E4300FB052B /* Helpers */,
 				9DC0620B2501AAEA00FA8600 /* Resources */,
+				9D6EB54725056CD600FB052B /* Model */,
+				9D6EB54825056CE100FB052B /* View */,
+				9D6EB54925056CE600FB052B /* Controller */,
+				9DC0621925025FDC00FA8600 /* MegaHack.entitlements */,
 				9D20017724FDD25200B8FC50 /* AppDelegate.swift */,
 				9D20017924FDD25200B8FC50 /* SceneDelegate.swift */,
-				9D20017D24FDD25200B8FC50 /* Main.storyboard */,
-				9D20018024FDD25400B8FC50 /* Assets.xcassets */,
-				9D20018224FDD25400B8FC50 /* LaunchScreen.storyboard */,
 				9D20018524FDD25400B8FC50 /* Info.plist */,
 				9D20018B24FDD6B000B8FC50 /* GoogleService-Info.plist */,
-				9DC0620F2501B1B900FA8600 /* LoginViewController.swift */,
-				9DC062112501CAA500FA8600 /* TasksViewController.swift */,
-				9DC062132501CAC200FA8600 /* SummaryViewController.swift */,
-				9DC062172501D07600FA8600 /* DaysCell.swift */,
-				9DC0621A2502768700FA8600 /* Task.swift */,
-				9DC0621C250277E800FA8600 /* TaskTableViewCell.swift */,
-				9DC0621E2502E5AF00FA8600 /* NewTaskViewController.swift */,
-				9DC062202502FCD600FA8600 /* DataPickerViewController.swift */,
-				9DC0622225030B7600FA8600 /* TaskPickerViewController.swift */,
-				9DC062242503221700FA8600 /* TaskList.swift */,
-				9DC062282504133300FA8600 /* TipsViewController.swift */,
-				9D68714E250421C80032D1BE /* TipCell.swift */,
-				9D68715025044A600032D1BE /* SupportViewController.swift */,
-				9D68715225045A4B0032D1BE /* NewHomeViewController.swift */,
-				9D68715425045CA30032D1BE /* Home.swift */,
-				9D68715625050C230032D1BE /* MenuViewController.swift */,
-				9D6EB53B25051B8D00FB052B /* Profile.swift */,
-				9D6EB53F25052AAB00FB052B /* DAOFirebase.swift */,
-				9D6EB5432505306300FB052B /* Model.swift */,
-				9D6EB545250537A100FB052B /* Account.swift */,
 			);
 			path = MegaHack;
+			sourceTree = "<group>";
+		};
+		9D6EB54725056CD600FB052B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9D6EB545250537A100FB052B /* Account.swift */,
+				9D6EB53F25052AAB00FB052B /* DAOFirebase.swift */,
+				9DC062172501D07600FA8600 /* DaysCell.swift */,
+				9D68715425045CA30032D1BE /* Home.swift */,
+				9D6EB5432505306300FB052B /* Model.swift */,
+				9DC0621A2502768700FA8600 /* Task.swift */,
+				9DC062242503221700FA8600 /* TaskList.swift */,
+				9DC0621C250277E800FA8600 /* TaskTableViewCell.swift */,
+				9D68714E250421C80032D1BE /* TipCell.swift */,
+				9D6EB53B25051B8D00FB052B /* Profile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9D6EB54825056CE100FB052B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9D20017D24FDD25200B8FC50 /* Main.storyboard */,
+				9D20018224FDD25400B8FC50 /* LaunchScreen.storyboard */,
+				9D20018024FDD25400B8FC50 /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9D6EB54925056CE600FB052B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9DC062202502FCD600FA8600 /* DataPickerViewController.swift */,
+				9DC0620F2501B1B900FA8600 /* LoginViewController.swift */,
+				9D68715625050C230032D1BE /* MenuViewController.swift */,
+				9D68715225045A4B0032D1BE /* NewHomeViewController.swift */,
+				9DC0621E2502E5AF00FA8600 /* NewTaskViewController.swift */,
+				9DC062132501CAC200FA8600 /* SummaryViewController.swift */,
+				9D68715025044A600032D1BE /* SupportViewController.swift */,
+				9DC0622225030B7600FA8600 /* TaskPickerViewController.swift */,
+				9DC062112501CAA500FA8600 /* TasksViewController.swift */,
+				9DC062282504133300FA8600 /* TipsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9D6EB54A25056E4300FB052B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9D6EB54B25056E5300FB052B /* UIColor+.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		9DC0620B2501AAEA00FA8600 /* Resources */ = {
@@ -192,7 +227,7 @@
 			);
 			name = MegaHack;
 			productName = MegaHack;
-			productReference = 9D20017424FDD25200B8FC50 /* MegaHack.app */;
+			productReference = 9D20017424FDD25200B8FC50 /* Ninho.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -324,6 +359,7 @@
 				9D6EB5442505306300FB052B /* Model.swift in Sources */,
 				9DC062122501CAA500FA8600 /* TasksViewController.swift in Sources */,
 				9DC0621F2502E5AF00FA8600 /* NewTaskViewController.swift in Sources */,
+				9D6EB54C25056E5300FB052B /* UIColor+.swift in Sources */,
 				9D68715725050C230032D1BE /* MenuViewController.swift in Sources */,
 				9D20017824FDD25200B8FC50 /* AppDelegate.swift in Sources */,
 				9D20017A24FDD25200B8FC50 /* SceneDelegate.swift in Sources */,
@@ -483,7 +519,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.academy.megahack;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Ninho;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -504,7 +540,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.academy.megahack;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Ninho;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

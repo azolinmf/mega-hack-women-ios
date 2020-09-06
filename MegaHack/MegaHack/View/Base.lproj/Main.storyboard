@@ -25,13 +25,13 @@
                                 <rect key="frame" x="0.0" y="346" width="414" height="314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Divida as tarefas diárias" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vw9-ez-ESI">
-                                        <rect key="frame" x="37" y="0.0" width="314.5" height="95.5"/>
+                                        <rect key="frame" x="37" y="0.0" width="314.5" height="93.5"/>
                                         <fontDescription key="fontDescription" name="NewYorkSmall-Heavy" family="New York Small" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Se todos fizerem um pouquinho, ninguém fica sobrecarregado" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYH-sJ-O3u">
-                                        <rect key="frame" x="37" y="110.5" width="291" height="48"/>
+                                        <rect key="frame" x="37" y="108.5" width="291" height="48"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <color key="textColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -894,13 +894,13 @@
                                 <rect key="frame" x="0.0" y="316.5" width="414" height="224"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esse ninho ainda está vazio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbA-i1-QAL">
-                                        <rect key="frame" x="32" y="10" width="312" height="79"/>
+                                        <rect key="frame" x="32" y="10" width="260.5" height="77"/>
                                         <fontDescription key="fontDescription" name="NewYorkSmall-Heavy" family="New York Small" pointSize="33"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50z-oB-DEm">
-                                        <rect key="frame" x="32" y="105" width="336.5" height="50.5"/>
+                                        <rect key="frame" x="32" y="103" width="336.5" height="50.5"/>
                                         <string key="text">Estamos trabalhando para logo logo entregar o 
 resumo das atividades do mês! Continue usando o 
 app para obter resultados </string>
