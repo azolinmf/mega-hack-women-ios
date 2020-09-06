@@ -27,7 +27,25 @@ class NewTaskViewController: UIViewController, UIPopoverPresentationControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        initialUI()
+        
+        textFieldConfigs()
+        
+        profilePhotoUI()
+        loadProfileImage()
+    }
+    
+    func textFieldConfigs() {
+        nameTextField?.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    func initialUI() {
         self.tabBarController?.tabBar.isHidden = true
         containerView.layer.cornerRadius = 40.0
         
@@ -43,14 +61,6 @@ class NewTaskViewController: UIViewController, UIPopoverPresentationControllerDe
         
         createButton.layer.cornerRadius = 18.0
         createButton.isEnabled = false
-        
-        nameTextField?.delegate = self
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        profilePhotoUI()
-        loadProfileImage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -119,6 +129,7 @@ class NewTaskViewController: UIViewController, UIPopoverPresentationControllerDe
     
     @IBAction func didPressCreateButton(_ sender: Any) {
         name = nameTextField.text ?? ""
+        checkName()
         let taskID = UUID().uuidString
         var owners = [Profile.shared.userID]
         //TODO: dar append dos outros owners da task
@@ -126,6 +137,12 @@ class NewTaskViewController: UIViewController, UIPopoverPresentationControllerDe
         DAOFireBase.save(task: newTask)
         
         tabBarController?.selectedIndex = 0
+    }
+    
+    func checkName() {
+        if name == "" {
+            name = "Minha tarefa"
+        }
     }
     
     func formateDate(date: Date) -> String {
@@ -172,6 +189,11 @@ extension NewTaskViewController {
         return false
     }
     
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        nameTextField.resignFirstResponder()
+        name = nameTextField.text ?? "Minha tarefa"
+    }
+    
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
@@ -186,5 +208,15 @@ extension NewTaskViewController {
                 self?.myPhoto.image = UIImage(data: data)
             }
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let textFieldText = textField.text,
+            let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                return false
+        }
+        let substringToReplace = textFieldText[rangeOfTextToReplace]
+        let count = textFieldText.count - substringToReplace.count + string.count
+        return count <= 30
     }
 }

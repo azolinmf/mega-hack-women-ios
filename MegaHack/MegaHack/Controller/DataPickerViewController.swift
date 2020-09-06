@@ -22,14 +22,14 @@ class DataPickerViewController: UIViewController {
     var sevenDaysfromNow: Date {
        return (Calendar.current as NSCalendar).date(byAdding: .day, value: 7, to: Date(), options: [])!
     }
-    let currentDate = NSDate()  //get the current date
+    let currentDate = NSDate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         containerView.layer.cornerRadius = 15.0
         
-        datePicker.minimumDate = currentDate as Date  //set the current date/time as a minimum
+        datePicker.minimumDate = currentDate as Date  
         datePicker.maximumDate = sevenDaysfromNow
     }
 
