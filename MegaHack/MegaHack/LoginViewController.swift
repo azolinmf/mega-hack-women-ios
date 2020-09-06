@@ -19,6 +19,8 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     @IBOutlet weak var anotherLoginButton: UIButton!
     var loginString: NSString = "Outras formas de login"
     var loginMutableString = NSMutableAttributedString()
+    var newUser = true
+    var currentUserHomeID = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,10 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         appleSignInConfig()
         
         googleSignInConfig()
+        
+        DAOFireBase.load {
+            print("finished getting data from firebase")
+        }
     }
     
     func googleSignInConfig() {
@@ -41,20 +47,56 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
-            Profile.shared.userID = user.userID
-            Profile.shared.name = user.profile.givenName
             if user.profile.hasImage {
                 Profile.shared.photo = user.profile.imageURL(withDimension: 50)
             }
             
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "newHome") as! NewHomeViewController
-            newViewController.modalPresentationStyle = .fullScreen
-            self.present(newViewController, animated: true, completion: nil)
+            for element in Model.instance.accounts {
+                if element.userID == user.userID {
+                    newUser = false
+                    currentUserHomeID = element.homeID
+                }
+            }
+            
+            if newUser {
+                Profile.shared.userID = user.userID
+                sendToNewHomeViewController()
+            } else {
+                Profile.shared.userID = user.userID
+                Profile.shared.name = user.profile.givenName
+                Profile.shared.homeName = getHomeName(userID: user.userID)
+                
+                //pegar tudo as tarefas tbm
+                
+                sendToTasksViewController()
+            }
             
         } else {
           print("\(error.localizedDescription)")
         }
+    }
+    
+    func getHomeName(userID: String) -> String {
+        for element in Model.instance.homes {
+            if element.homeID == currentUserHomeID {
+                return element.name
+            }
+        }
+        return "Minha casa"
+    }
+    
+    func sendToTasksViewController() {
+       if let tabbar = (storyboard?.instantiateViewController(withIdentifier: "tabBar") as? UITabBarController) {
+            tabbar.modalPresentationStyle = .fullScreen
+            self.present(tabbar, animated: true, completion: nil)
+        }
+    }
+    
+    func sendToNewHomeViewController() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "newHome") as! NewHomeViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: true, completion: nil)
     }
     
     func labelUI() {

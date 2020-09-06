@@ -1,5 +1,5 @@
 //
-//  Profile.swift
+//  Model.swift
 //  MegaHack
 //
 //  Created by Maria Fernanda Azolin on 06/09/20.
@@ -8,16 +8,14 @@
 
 import UIKit
 
-class Profile {
+class Model {
     
-    static let shared = Profile()
+    static let instance = Model()
     
     private init() {
         
     }
     
-    var userID: String = ""
-    var name: String = ""
-    var photo: URL = URL(fileURLWithPath: "")
-    var homeName: String = ""
+    var homes: [Home] = []
+    var accounts: [Account] = []
 }

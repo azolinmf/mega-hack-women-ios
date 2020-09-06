@@ -25,6 +25,8 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var tasksTableView: UITableView!
     @IBOutlet weak var todayLabel: UILabel!
     
+    @IBOutlet weak var homeNameLabel: UILabel!
+    
     let date = Date()
     let calendar = Calendar.current
     var selectedIndex = 0
@@ -48,6 +50,7 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
         selectedDay = today
         
         todayLabel.text = intToMonth(month: thisMonth) + ", " + String(today)
+        homeNameLabel.text = Profile.shared.homeName
     }
     
     override func viewWillAppear(_ animated: Bool) {
