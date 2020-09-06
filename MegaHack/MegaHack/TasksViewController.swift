@@ -168,13 +168,7 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskTableViewCell
-        
-        //TODO: Só mostrar a task se eu for owner
-        //pra ver quem é owner:
-        //procura a task no Model.tasks
-        //ve se os userID batem (meu e do model)
-        //meu: Profile.userID
-        
+                
         cell.isHidden = true
         cell.layer.cornerRadius = 8.0
         cell.containerView.layer.cornerRadius = 8.0
@@ -186,6 +180,11 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         if selectedDay == task.date {
             cell.isHidden = false
+        }
+        
+        let owners = task.owners
+        if !owners.contains(Profile.shared.userID) {
+            cell.isHidden = true
         }
         
         return cell
@@ -200,7 +199,8 @@ class TasksViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if tasks[indexPath.row].date == selectedDay {
+        let task = tasks[indexPath.row]
+        if task.date == selectedDay && task.owners.contains(Profile.shared.userID) {
             return 75
         }
         return 0
