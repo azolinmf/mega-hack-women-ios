@@ -16,7 +16,7 @@ Este é o app **Ninho**, da equipe **Sovi**, submetido para o MegaHack Women 202
 ## Para instalar
 
 ### Pelo TestFlight
-Siga esse link para fazer download pelo [TestFlight](). Disponível para **iOS 13** ou superior.
+Siga esse link para fazer download pelo [TestFlight](https://testflight.apple.com/join/7B2osFZg). Disponível para **iOS 13** ou superior.
 
 ### Pelo repositório do projeto
 Faça download deste repositório e rode no simulador em **XCode 11.7** ou superior.
