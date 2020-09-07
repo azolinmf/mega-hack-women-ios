@@ -21,5 +21,6 @@ Siga esse link para fazer download pelo [TestFlight](https://testflight.apple.co
 ### Pelo repositório do projeto
 Faça download deste repositório e rode no simulador em **XCode 11.7** ou superior.
 
+## Preview
 
 ![](tela1.png) ![](tela2.png) ![](tela3.png) ![](tela4.png)
