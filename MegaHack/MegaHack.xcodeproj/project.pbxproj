@@ -122,6 +122,7 @@
 				9D6EB54825056CE100FB052B /* View */,
 				9D6EB54925056CE600FB052B /* Controller */,
 				9DC0621925025FDC00FA8600 /* MegaHack.entitlements */,
+				9D20018024FDD25400B8FC50 /* Assets.xcassets */,
 				9D20017724FDD25200B8FC50 /* AppDelegate.swift */,
 				9D20017924FDD25200B8FC50 /* SceneDelegate.swift */,
 				9D20018524FDD25400B8FC50 /* Info.plist */,
@@ -152,7 +153,6 @@
 			children = (
 				9D20017D24FDD25200B8FC50 /* Main.storyboard */,
 				9D20018224FDD25400B8FC50 /* LaunchScreen.storyboard */,
-				9D20018024FDD25400B8FC50 /* Assets.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";
