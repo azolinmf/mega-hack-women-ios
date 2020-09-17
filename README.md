@@ -1,6 +1,6 @@
 # Ninho
 
-Este é o app **Ninho**, da equipe **Sovi**, submetido para o MegaHack Women 2020.
+Este é o app **Ninho**, da equipe **Sovi**, submetido para o **MegaHack Women 2020** e ganhador do primeiro lugar do desafio SEBRAE.
 
 ## O que é?
 
